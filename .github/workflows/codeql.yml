@@ -1,5 +1,4 @@
-
-name: "CodeQL"
+name: "workflow"
 
 on:
   push:
@@ -7,35 +6,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  analyze:
+  say-hi:
     name: Analyze
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      # required for all workflows
       security-events: write
-
-      # only required for workflows in private repositories
       actions: read
       contents: read
 
     strategy:
-      fail-fast: true
       matrix:
         language: [ 'c-cpp', 'java-kotlin', 'javascript-typescript', 'python', 'go' ]
-        # CodeQL supports [ 'c-cpp', 'csharp', 'go', 'java-kotlin', 'javascript-typescript', 'python', 'ruby', 'swift' ]
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # Initializes the CodeQL tools for scanning.
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
-      with:
-        languages: ${{ matrix.language }}
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
-      with:
-        category: "/language:${{matrix.language}}"
+    - name: say hello
+      run: |
+        echo "hello from the sorting methods repository"
+        echo "language: ${{ matrix.language }}"
