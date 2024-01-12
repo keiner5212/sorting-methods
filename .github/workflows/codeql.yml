@@ -7,7 +7,7 @@ on:
 
 jobs:
   say-hi:
-    name: say-hello
+    name: Analyze
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:

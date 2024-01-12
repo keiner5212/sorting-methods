@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
 
-// Function to sort an array using the Bubble Sort algorithm
+/**
+ * Function to sort an array using the Bubble Sort algorithm
+ * */ 
 void bubbleSort(int arr[], int n)
 {
     for (int i = 0; i < n - 1; i++)
