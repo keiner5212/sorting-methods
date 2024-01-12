@@ -19,6 +19,7 @@ jobs:
       matrix:
         language: [ 'c-cpp', 'java-kotlin', 'javascript-typescript', 'python', 'go' ]
 
+    steps:
     - name: say hello
       run: |
         echo "hello from the sorting methods repository"
