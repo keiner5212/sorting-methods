@@ -7,7 +7,7 @@ on:
 
 jobs:
   say-hi:
-    name: Analyze
+    name: say-hello
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -18,10 +18,6 @@ jobs:
     strategy:
       matrix:
         language: [ 'c-cpp', 'java-kotlin', 'javascript-typescript', 'python', 'go' ]
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
 
     - name: say hello
       run: |
